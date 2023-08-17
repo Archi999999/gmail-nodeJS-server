@@ -8,8 +8,10 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-let smtp_login = process.env.SMTP_LOGIN
-let smtp_password = process.env.SMTP_PASSWORD
+//let smtp_login = process.env.SMTP_LOGIN
+//let smtp_password = process.env.SMTP_PASSWORD
+const smtp_login = ''
+const smtp_password = ''
 
 let transporter = nodemailer.createTransport({
     // host: "smpt.ethereal.email",
@@ -55,9 +57,9 @@ app.post('/sendMessage', async function (req, res) {
     }
 })
 
-let port = process.env.PORT || 3003
+// let port = process.env.PORT || 3003
 
-app.listen(port, function () {
+app.listen(3010, function () {
     console.log("Example app listening on port 3003!")
 })
 
