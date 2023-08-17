@@ -26,31 +26,24 @@ let transporter = nodemailer.createTransport({
     }
 })
 
-app.get('/', function (req, res) {
-    res.send('hello world123')
-});
-
-app.get('/rew', function (req, res) {
-    res.send('rew adwawdrew')
+app.get('/test', function (req, res) {
+    res.send('server working')
 });
 
 app.post('/sendMessage', async function (req, res) {
     const {email, text, name} = req.body;
     try {
         const info = await transporter.sendMail({
-
             from: 'GO TO JOB',
             to: 'gilmanov.dev@gmail.com',
             subject: 'тестовое сообщение',
-            // // text: 'hello world?',
             html: `<b>сообщение с вашего портфолио</b>
             <div>${name}</div>
             <div>${email}</div>
             <div>${text}</div>
             `
-
         });
-        console.log('Email sent:', info.response, req.body);
+        // console.log('Email sent:', info.response, req.body);
         res.send('Email sent successfully!');
     } catch (error) {
         console.error('Error sending email:', error);
