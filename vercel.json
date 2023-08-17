@@ -3,7 +3,7 @@
   "name": "gmail-nodejs",
   "builds": [
     {
-      "src": "index.js",
+      "src": "src/index.js",
       "use": "@vercel/node"
     }
   ],
